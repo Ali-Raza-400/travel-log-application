@@ -8,6 +8,7 @@ import cookieParser from "cookie-parser";
 const { MONGO_URL, PORT } = process.env;
 //
 import authRoute from "./routes/auth.route.js";
+import experienceRoute from "./routes/experience.route.js";
 
 mongoose
   .connect(MONGO_URL, {
@@ -33,3 +34,4 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/", authRoute);
+app.use("/experience", experienceRoute);
