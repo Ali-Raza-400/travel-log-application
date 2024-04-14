@@ -103,7 +103,7 @@ span a {
   color: rgba(0, 212, 255, 1);
 }
 
-.home_page button {
+/* .home_page button {
   background-color: rgb(27, 73, 83);
   color: #fff;
   cursor: pointer;
@@ -112,7 +112,7 @@ span a {
   border-radius: 2rem;
   transition: ease-in 0.3s;
   border: none;
-}
+} */
 
 .home_page button:hover {
   background-color: rgba(0, 212, 255, 1);
