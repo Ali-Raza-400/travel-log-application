@@ -111,7 +111,7 @@
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Edit</Button>
+                    <Button onClick={()=>navigate(`/edit-experience/${experience._id}`)} size="small">Edit</Button>
                     {/* <Button size="small">Learn More</Button> */}
                   </CardActions>
                 </Card>
