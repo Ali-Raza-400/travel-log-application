@@ -2,10 +2,16 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Formik } from "formik";
+import ImageUploader from 'react-images-upload';
+
 const EditExperience = () => {
   const experienceId = useParams().id;
   const [experience, setExperience] = useState({});
-
+  const [pictures, setPictures] = useState([]);
+console.log("pictures",pictures);
+  const onDrop = (picture) => {
+      setPictures([...pictures, picture]);
+  };
   useEffect(() => {
     async function fetchExpById(experienceId) {
       try {
@@ -86,6 +92,16 @@ const EditExperience = () => {
                 value={values.period}
               />
               {errors.period && touched.period && errors.period}
+              {pictures.map((picture, index) => (
+                <img key={index} src={URL.createObjectURL(picture)} alt={`Image ${index}`} />
+              ))}
+              <ImageUploader
+                withIcon={true}
+                buttonText="Choose images"
+                onChange={onDrop}
+                imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+                maxFileSize={5242880}
+              />
               <button type="submit" disabled={isSubmitting}>
                 Submit
               </button>
