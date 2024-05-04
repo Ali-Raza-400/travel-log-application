@@ -109,6 +109,10 @@
                     <Typography variant="body2" color="text.secondary">
                       {experience?.description}
                     </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                    Date:  {experience?.period}
+                    </Typography>
+
                   </CardContent>
                   <CardActions>
                     <Button onClick={()=>navigate(`/edit-experience/${experience._id}`)} size="small">Edit</Button>
