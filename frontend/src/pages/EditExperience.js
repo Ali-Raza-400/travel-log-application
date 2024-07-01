@@ -45,10 +45,7 @@ const EditExperience = () => {
       <Formik
         initialValues={{ title: "", description: "", period: "", imageUrl: "" }}
         onSubmit={async (values, { setSubmitting }) => {
-          console.log("values", values);
           try {
-            // Include image URL in the form values
-            console.log("pictures", pictures);
             const payload = {
               ...values,
               imageUrl:
@@ -57,7 +54,6 @@ const EditExperience = () => {
                   : "https://img.freepik.com/free-vector/illustration-gallery-icon_53876-27002.jpg",
               _id: experience._id,
             };
-            console.log("payload",payload);
             await axios.post("/experience/add", payload);
             nevigate("/");
           } catch (error) {
