@@ -46,6 +46,7 @@ const EditExperience = () => {
         initialValues={{ title: "", description: "", period: "", imageUrl: "" }}
         onSubmit={async (values, { setSubmitting }) => {
           try {
+            console.log("heko");
             const payload = {
               ...values,
               imageUrl:
